@@ -1,0 +1,228 @@
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.cart-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #27ae60, #219a52);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(39, 174, 96, 0.3);
+}
+
+.product-info {
+  padding: 20px;
+}
+
+.product-name {
+  color: #2c3e50;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.product-category {
+  color: #3498db;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.product-description {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.product-price {
+  color: #e74c3c;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.add-to-cart-btn {
+  background: linear-gradient(135deg, #27ae60, #219a52);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.add-to-cart-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #219a52, #1e8449);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
+.add-to-cart-btn.sold-out {
+  background: #95a5a6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.add-to-cart-btn.sold-out:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Quantity Controls on Product Card */
+.quantity-controls-product {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f8f9fa;
+  padding: 6px 12px;
+  border-radius: 25px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.quantity-controls-product:hover {
+  border-color: #3498db;
+  background: white;
+}
+
+.quantity-controls-product .quantity-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.quantity-controls-product .quantity-btn:hover {
+  background: #2980b9;
+  transform: scale(1.1);
+}
+
+.quantity-controls-product .quantity-btn:active {
+  transform: scale(0.95);
+}
+
+.quantity-controls-product .quantity-btn.minus {
+  background: #e74c3c;
+}
+
+.quantity-controls-product .quantity-btn.minus:hover {
+  background: #c0392b;
+}
+
+.quantity-controls-product .quantity-btn.plus {
+  background: #27ae60;
+}
+
+.quantity-controls-product .quantity-btn.plus:hover {
+  background: #219a52;
+}
+
+.quantity-controls-product .quantity {
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-footer {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+  
+  .product-price {
+    text-align: center;
+  }
+  
+  .quantity-controls-product {
+    justify-content: center;
+  }
+  
+  .add-to-cart-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-image {
+    height: 160px;
+  }
+  
+  .product-info {
+    padding: 15px;
+  }
+  
+  .product-name {
+    font-size: 1.1rem;
+  }
+  
+  .quantity-controls-product {
+    gap: 8px;
+    padding: 4px 8px;
+  }
+  
+  .quantity-controls-product .quantity-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+}
